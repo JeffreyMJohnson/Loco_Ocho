@@ -1,0 +1,889 @@
+fileFormatVersion: 2
+guid: 30c379772de742641863ab05d40e3f91
+timeCreated: 1455488989
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ace_clubs
+    21300002: two_clubs
+    21300004: three_clubs
+    21300006: four_clubs
+    21300008: five_clubs
+    21300010: six_clubs
+    21300012: seven_clubs
+    21300014: eight_clubs
+    21300016: nine_clubs
+    21300018: ten_clubs
+    21300020: jack_clubs
+    21300022: queen_clubs
+    21300024: king_clubs
+    21300026: ace_diamonds
+    21300028: two_diamonds
+    21300030: three_diamonds
+    21300032: four_diamonds
+    21300034: five_diamonds
+    21300036: six_diamonds
+    21300038: seven_diamonds
+    21300040: eight_diamonds
+    21300042: nine_diamonds
+    21300044: ten_diamonds
+    21300046: jack_diamonds
+    21300048: queen_diamonds
+    21300050: king_diamonds
+    21300052: ace_hearts
+    21300054: two_hearts
+    21300056: three_hearts
+    21300058: four_hearts
+    21300060: five_hearts
+    21300062: six_hearts
+    21300064: seven_hearts
+    21300066: eight_hearts
+    21300068: nine_hearts
+    21300070: ten_hearts
+    21300072: jack_hearts
+    21300074: queen_hearts
+    21300076: king_hearts
+    21300078: ace_spades
+    21300080: two_spades
+    21300082: three_spades
+    21300084: four_spades
+    21300086: five_spades
+    21300088: six_spades
+    21300090: seven_spades
+    21300092: eight_spades
+    21300094: nine_spades
+    21300096: ten_spades
+    21300098: jack_spades
+    21300100: queen_spades
+    21300102: king_spades
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ace_clubs
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -79, y: 110.28577}
+        - {x: -79, y: -109.71423}
+        - {x: 79, y: -109.71423}
+        - {x: 79, y: 110.28577}
+    - name: two_clubs
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.96153, y: 110.28577}
+        - {x: -78.96153, y: -109.71423}
+        - {x: 80.03847, y: -109.71423}
+        - {x: 80.03847, y: 110.28577}
+    - name: three_clubs
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.923065, y: 110.28577}
+        - {x: -78.923065, y: -109.71423}
+        - {x: 79.076935, y: -109.71423}
+        - {x: 79.076935, y: 110.28577}
+    - name: four_clubs
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.88458, y: 110.28577}
+        - {x: -78.88458, y: -109.71423}
+        - {x: 80.11542, y: -109.71423}
+        - {x: 80.11542, y: 110.28577}
+    - name: five_clubs
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.84613, y: 110.28577}
+        - {x: -78.84613, y: -109.71423}
+        - {x: 79.15387, y: -109.71423}
+        - {x: 79.15387, y: 110.28577}
+    - name: six_clubs
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.80768, y: 110.28577}
+        - {x: -78.80768, y: -109.71423}
+        - {x: 80.19232, y: -109.71423}
+        - {x: 80.19232, y: 110.28577}
+    - name: seven_clubs
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.769165, y: 110.28577}
+        - {x: -78.769165, y: -109.71423}
+        - {x: 79.230835, y: -109.71423}
+        - {x: 79.230835, y: 110.28577}
+    - name: eight_clubs
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.73071, y: 110.28577}
+        - {x: -78.73071, y: -109.71423}
+        - {x: 80.26929, y: -109.71423}
+        - {x: 80.26929, y: 110.28577}
+    - name: nine_clubs
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.69226, y: 110.28577}
+        - {x: -78.69226, y: -109.71423}
+        - {x: 79.30774, y: -109.71423}
+        - {x: 79.30774, y: 110.28577}
+    - name: ten_clubs
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.65381, y: 110.28577}
+        - {x: -78.65381, y: -109.71423}
+        - {x: 80.34619, y: -109.71423}
+        - {x: 80.34619, y: 110.28577}
+    - name: jack_clubs
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.61536, y: 110.28577}
+        - {x: -78.61536, y: -109.71423}
+        - {x: 79.38464, y: -109.71423}
+        - {x: 79.38464, y: 110.28577}
+    - name: queen_clubs
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.57678, y: 110.28577}
+        - {x: -78.57678, y: -109.71423}
+        - {x: 80.42322, y: -109.71423}
+        - {x: 80.42322, y: 110.28577}
+    - name: king_clubs
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 2340
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.53833, y: 110.28577}
+        - {x: -78.53833, y: -109.71423}
+        - {x: 79.46167, y: -109.71423}
+        - {x: 79.46167, y: 110.28577}
+    - name: ace_diamonds
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -79, y: 111.35718}
+        - {x: -79, y: -109.64282}
+        - {x: 79, y: -109.64282}
+        - {x: 79, y: 111.35718}
+    - name: two_diamonds
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.96153, y: 111.35718}
+        - {x: -78.96153, y: -109.64282}
+        - {x: 80.03847, y: -109.64282}
+        - {x: 80.03847, y: 111.35718}
+    - name: three_diamonds
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.923065, y: 111.35718}
+        - {x: -78.923065, y: -109.64282}
+        - {x: 79.076935, y: -109.64282}
+        - {x: 79.076935, y: 111.35718}
+    - name: four_diamonds
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.88458, y: 111.35718}
+        - {x: -78.88458, y: -109.64282}
+        - {x: 80.11542, y: -109.64282}
+        - {x: 80.11542, y: 111.35718}
+    - name: five_diamonds
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.84613, y: 111.35718}
+        - {x: -78.84613, y: -109.64282}
+        - {x: 79.15387, y: -109.64282}
+        - {x: 79.15387, y: 111.35718}
+    - name: six_diamonds
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.80768, y: 111.35718}
+        - {x: -78.80768, y: -109.64282}
+        - {x: 80.19232, y: -109.64282}
+        - {x: 80.19232, y: 111.35718}
+    - name: seven_diamonds
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.769165, y: 111.35718}
+        - {x: -78.769165, y: -109.64282}
+        - {x: 79.230835, y: -109.64282}
+        - {x: 79.230835, y: 111.35718}
+    - name: eight_diamonds
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.73071, y: 111.35718}
+        - {x: -78.73071, y: -109.64282}
+        - {x: 80.26929, y: -109.64282}
+        - {x: 80.26929, y: 111.35718}
+    - name: nine_diamonds
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.69226, y: 111.35718}
+        - {x: -78.69226, y: -109.64282}
+        - {x: 79.30774, y: -109.64282}
+        - {x: 79.30774, y: 111.35718}
+    - name: ten_diamonds
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.65381, y: 111.35718}
+        - {x: -78.65381, y: -109.64282}
+        - {x: 80.34619, y: -109.64282}
+        - {x: 80.34619, y: 111.35718}
+    - name: jack_diamonds
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.61536, y: 111.35718}
+        - {x: -78.61536, y: -109.64282}
+        - {x: 79.38464, y: -109.64282}
+        - {x: 79.38464, y: 111.35718}
+    - name: queen_diamonds
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.57678, y: 111.35718}
+        - {x: -78.57678, y: -109.64282}
+        - {x: 80.42322, y: -109.64282}
+        - {x: 80.42322, y: 111.35718}
+    - name: king_diamonds
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 1560
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.53833, y: 111.35718}
+        - {x: -78.53833, y: -109.64282}
+        - {x: 79.46167, y: -109.64282}
+        - {x: 79.46167, y: 111.35718}
+    - name: ace_hearts
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -79, y: 110.42859}
+        - {x: -79, y: -109.57141}
+        - {x: 79, y: -109.57141}
+        - {x: 79, y: 110.42859}
+    - name: two_hearts
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.96153, y: 110.42859}
+        - {x: -78.96153, y: -109.57141}
+        - {x: 80.03847, y: -109.57141}
+        - {x: 80.03847, y: 110.42859}
+    - name: three_hearts
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.923065, y: 110.42859}
+        - {x: -78.923065, y: -109.57141}
+        - {x: 79.076935, y: -109.57141}
+        - {x: 79.076935, y: 110.42859}
+    - name: four_hearts
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.88458, y: 110.42859}
+        - {x: -78.88458, y: -109.57141}
+        - {x: 80.11542, y: -109.57141}
+        - {x: 80.11542, y: 110.42859}
+    - name: five_hearts
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.84613, y: 110.42859}
+        - {x: -78.84613, y: -109.57141}
+        - {x: 79.15387, y: -109.57141}
+        - {x: 79.15387, y: 110.42859}
+    - name: six_hearts
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.80768, y: 110.42859}
+        - {x: -78.80768, y: -109.57141}
+        - {x: 80.19232, y: -109.57141}
+        - {x: 80.19232, y: 110.42859}
+    - name: seven_hearts
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.769165, y: 110.42859}
+        - {x: -78.769165, y: -109.57141}
+        - {x: 79.230835, y: -109.57141}
+        - {x: 79.230835, y: 110.42859}
+    - name: eight_hearts
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.73071, y: 110.42859}
+        - {x: -78.73071, y: -109.57141}
+        - {x: 80.26929, y: -109.57141}
+        - {x: 80.26929, y: 110.42859}
+    - name: nine_hearts
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.69226, y: 110.42859}
+        - {x: -78.69226, y: -109.57141}
+        - {x: 79.30774, y: -109.57141}
+        - {x: 79.30774, y: 110.42859}
+    - name: ten_hearts
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.65381, y: 110.42859}
+        - {x: -78.65381, y: -109.57141}
+        - {x: 80.34619, y: -109.57141}
+        - {x: 80.34619, y: 110.42859}
+    - name: jack_hearts
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.61536, y: 110.42859}
+        - {x: -78.61536, y: -109.57141}
+        - {x: 79.38464, y: -109.57141}
+        - {x: 79.38464, y: 110.42859}
+    - name: queen_hearts
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.57678, y: 110.42859}
+        - {x: -78.57678, y: -109.57141}
+        - {x: 80.42322, y: -109.57141}
+        - {x: 80.42322, y: 110.42859}
+    - name: king_hearts
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 780
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.53833, y: 110.42859}
+        - {x: -78.53833, y: -109.57141}
+        - {x: 79.46167, y: -109.57141}
+        - {x: 79.46167, y: 110.42859}
+    - name: ace_spades
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -79, y: 110}
+        - {x: -79, y: -110}
+        - {x: 79, y: -110}
+        - {x: 79, y: 110}
+    - name: two_spades
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.96153, y: 110}
+        - {x: -78.96153, y: -110}
+        - {x: 80.03847, y: -110}
+        - {x: 80.03847, y: 110}
+    - name: three_spades
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.923065, y: 110}
+        - {x: -78.923065, y: -110}
+        - {x: 79.076935, y: -110}
+        - {x: 79.076935, y: 110}
+    - name: four_spades
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.88458, y: 110}
+        - {x: -78.88458, y: -110}
+        - {x: 80.11542, y: -110}
+        - {x: 80.11542, y: 110}
+    - name: five_spades
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.84613, y: 110}
+        - {x: -78.84613, y: -110}
+        - {x: 79.15387, y: -110}
+        - {x: 79.15387, y: 110}
+    - name: six_spades
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.80768, y: 110}
+        - {x: -78.80768, y: -110}
+        - {x: 80.19232, y: -110}
+        - {x: 80.19232, y: 110}
+    - name: seven_spades
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.769165, y: 110}
+        - {x: -78.769165, y: -110}
+        - {x: 79.230835, y: -110}
+        - {x: 79.230835, y: 110}
+    - name: eight_spades
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.73071, y: 110}
+        - {x: -78.73071, y: -110}
+        - {x: 80.26929, y: -110}
+        - {x: 80.26929, y: 110}
+    - name: nine_spades
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.69226, y: 110}
+        - {x: -78.69226, y: -110}
+        - {x: 79.30774, y: -110}
+        - {x: 79.30774, y: 110}
+    - name: ten_spades
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.65381, y: 110}
+        - {x: -78.65381, y: -110}
+        - {x: 80.34619, y: -110}
+        - {x: 80.34619, y: 110}
+    - name: jack_spades
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.61536, y: 110}
+        - {x: -78.61536, y: -110}
+        - {x: 79.38464, y: -110}
+        - {x: 79.38464, y: 110}
+    - name: queen_spades
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.57678, y: 110}
+        - {x: -78.57678, y: -110}
+        - {x: 80.42322, y: -110}
+        - {x: 80.42322, y: 110}
+    - name: king_spades
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 0
+        width: 560
+        height: 780
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.53833, y: 110}
+        - {x: -78.53833, y: -110}
+        - {x: 79.46167, y: -110}
+        - {x: 79.46167, y: 110}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
