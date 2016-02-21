@@ -36,6 +36,9 @@ public class Deck : MonoBehaviour
     public List<Card> cards = new List<Card>();
     public float StackOffset;
     public Sprite back;
+    public OnCardClickedHandler OnCardClicked;
+
+    public delegate void OnCardClickedHandler(Card card);
    
     private static System.Random rng = new System.Random();
     Sprite[] fronts;
@@ -67,9 +70,19 @@ public class Deck : MonoBehaviour
                 currentOffset += StackOffset;
                 Sprite front = GetCardFront(rank, suit);
                 newCard.Init(rank, suit, GetCardValue(rank), front, back);
+                //subscribe to click event
+                newCard.onClicked += new Card.OnClickedHandler(CardClickHandler);
                 cards.Add(newCard);
-                
             }
+        }
+    }
+
+    void CardClickHandler(Card card)
+    {
+        //just bubble up the event to the manager to abstract logic
+        if(OnCardClicked != null)
+        {
+            OnCardClicked(card);
         }
     }
 

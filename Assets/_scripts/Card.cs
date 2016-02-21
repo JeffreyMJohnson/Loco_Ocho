@@ -12,10 +12,12 @@ public class Card : MonoBehaviour, IEquatable<Card>, IPointerClickHandler
     public Sprite Front { get; private set; }
     public Sprite Back { get; private set; }
     public bool IsFrontFacing { get { return image.sprite == Front; } }
+    public OnClickedHandler onClicked;
 
     Image image;
     string rankAsString;
     string suitAsString;
+    
     
 
     void Awake()
@@ -42,10 +44,14 @@ public class Card : MonoBehaviour, IEquatable<Card>, IPointerClickHandler
         image.sprite = IsFrontFacing ? Back : Front;
     }
 
-   
+    public delegate void OnClickedHandler(Card card);
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        Flip();
+        if(onClicked != null)
+        {
+            onClicked(this);
+        }
     }
 
     #region equality overrides

@@ -9,8 +9,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         deck = GetComponent<Deck>();
+        deck.OnCardClicked += OnCardClickedHandler;
     }
     
+    void OnCardClickedHandler(Card card)
+    {
+        //Debug.Log(string.Format("{0} was clicked.", card));
+        card.Flip();
+    }
     
 
 }
