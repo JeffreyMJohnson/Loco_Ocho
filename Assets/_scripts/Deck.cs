@@ -35,7 +35,8 @@ public class Deck : MonoBehaviour
     public GameObject CardPrefab;
     public List<Card> cards = new List<Card>();
     public float StackOffset;
-
+    public Sprite back;
+   
     private static System.Random rng = new System.Random();
     Sprite[] fronts;
     RectTransform deckPosition;
@@ -65,7 +66,7 @@ public class Deck : MonoBehaviour
                 rectr.offsetMin = new Vector2(currentOffset, 0);
                 currentOffset += StackOffset;
                 Sprite front = GetCardFront(rank, suit);
-                newCard.Init(rank, suit, GetCardValue(rank), front);
+                newCard.Init(rank, suit, GetCardValue(rank), front, back);
                 cards.Add(newCard);
                 
             }

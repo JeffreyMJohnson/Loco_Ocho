@@ -347,6 +347,7 @@ MonoBehaviour:
   CardPrefab: {fileID: 151032, guid: eb427f38f4905234ebecc33cfbdffa0f, type: 2}
   cards: []
   StackOffset: 15
+  back: {fileID: 21300000, guid: 4cc9041c4f588a04d893c2f290157158, type: 3}
 --- !u!1 &859243596
 GameObject:
   m_ObjectHideFlags: 0
