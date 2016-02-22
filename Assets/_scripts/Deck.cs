@@ -39,23 +39,30 @@ public class Deck : MonoBehaviour
     public OnCardClickedHandler OnCardClicked;
 
     public delegate void OnCardClickedHandler(Card card);
-   
+
     private static System.Random rng = new System.Random();
     Sprite[] fronts;
     RectTransform deckPosition;
     void Awake()
     {
         fronts = Resources.LoadAll<Sprite>("cards_classic");
-        
+
         Canvas canvas = FindObjectOfType<Canvas>();
         deckPosition = GameObject.Find("DeckPosition").GetComponent<RectTransform>();
         LoadCards();
-        //transform.parent = deckPosition;
+    }
+
+    //debug only
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            Shuffle();
+        }
     }
 
     void LoadCards()
     {
-        float currentOffset = 0;
         foreach (Suit suit in Enum.GetValues(typeof(Suit)))
         {
             foreach (Rank rank in Enum.GetValues(typeof(Rank)))
@@ -63,11 +70,6 @@ public class Deck : MonoBehaviour
                 Card newCard = (Instantiate(CardPrefab) as GameObject).GetComponent<Card>();
                 newCard.transform.SetParent(deckPosition);
                 newCard.transform.localScale = Vector3.one;
-                RectTransform rectr = newCard.GetComponent<RectTransform>();
-                float width = rectr.rect.width;
-                rectr.offsetMax = new Vector2(currentOffset + width, 0); 
-                rectr.offsetMin = new Vector2(currentOffset, 0);
-                currentOffset += StackOffset;
                 Sprite front = GetCardFront(rank, suit);
                 newCard.Init(rank, suit, GetCardValue(rank), front, back);
                 //subscribe to click event
@@ -75,12 +77,31 @@ public class Deck : MonoBehaviour
                 cards.Add(newCard);
             }
         }
+        SetCardGroupPositions(deckPosition, StackOffset, cards);
+    }
+
+    /// <summary>
+    /// Sets a list of cards in order horizontally with given horizontal offset as well as setting appropriate sibling index
+    /// to given parent.
+    /// </summary>
+    /// <param name="parent"></param>
+    /// <param name="offset"></param>
+    /// <param name="cards"></param>
+    void SetCardGroupPositions(RectTransform parent, float offset, List<Card> cards)
+    {
+       for(int i = 0; i < cards.Count; i++)
+        {
+            RectTransform card = cards[i].GetComponent<RectTransform>();
+            card.SetSiblingIndex(i);
+            card.offsetMin = new Vector2((offset * i), 0);
+            card.offsetMax = new Vector2((offset * i), 0);
+        }
     }
 
     void CardClickHandler(Card card)
     {
         //just bubble up the event to the manager to abstract logic
-        if(OnCardClicked != null)
+        if (OnCardClicked != null)
         {
             OnCardClicked(card);
         }
@@ -101,7 +122,7 @@ public class Deck : MonoBehaviour
             cards[randomIndex] = cards[listIndex];
             cards[listIndex] = randomCard;
         }
-
+        SetCardGroupPositions(deckPosition, StackOffset, cards);
     }
 
     uint GetCardValue(Rank rank)
