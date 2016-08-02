@@ -4,10 +4,35 @@ using System;
 using UnityEngine.EventSystems;
 
 
-public class Card : MonoBehaviour, IEquatable<Card>, IPointerClickHandler
+public class Card
 {
     public Deck.Rank Rank { get; private set; }
     public Deck.Suit Suit { get; private set; }
+    public Sprite Front { get; private set; }
+
+    public Card(Deck.Suit suit, Deck.Rank rank, string suitAsString, string rankAsString, Sprite front)
+    {
+        Suit = suit;
+        Rank = rank;
+        this.suitAsString = suitAsString;
+        this.rankAsString = rankAsString;
+        Front = front;
+    }
+
+
+    private readonly string rankAsString;
+    private readonly string suitAsString;
+   
+    public override string ToString()
+    {
+        return String.Format("{0} of {1}", rankAsString, suitAsString);
+    }
+
+    
+
+
+ #region old stuff
+    /*
     public uint Value { get; private set; }
     public Sprite Front { get; private set; }
     public Sprite Back { get; private set; }
@@ -15,10 +40,10 @@ public class Card : MonoBehaviour, IEquatable<Card>, IPointerClickHandler
     public OnClickedHandler onClicked;
 
     Image image;
-    string rankAsString;
-    string suitAsString;
     
-    
+
+
+
 
     void Awake()
     {
@@ -106,62 +131,6 @@ public class Card : MonoBehaviour, IEquatable<Card>, IPointerClickHandler
         return this.Rank.GetHashCode() ^ this.Suit.GetHashCode() ^ this.Value.GetHashCode();
     }
     #endregion
-
-    public override string ToString()
-    {
-        return String.Format("{0} of {1}", rankAsString, suitAsString);
-    }
-
-    String GetSuit(Deck.Suit suit)
-    {
-        switch (suit)
-        {
-            case Deck.Suit.CLUBS:
-                return "Clubs";
-            case Deck.Suit.DIAMONDS:
-                return "Diamonds";
-            case Deck.Suit.HEARTS:
-                return "Hearts";
-            case Deck.Suit.SPADES:
-                return "Spades";
-            default:
-                return "";
-        }
-    }
-
-    string GetRank(Deck.Rank rank)
-    {
-        switch(rank)
-        {
-            case Deck.Rank.ACE:
-                return "Ace";
-            case Deck.Rank.EIGHT:
-                return "Eight";
-            case Deck.Rank.FIVE:
-                return "Five";
-            case Deck.Rank.FOUR:
-                return "Four";
-            case Deck.Rank.JACK:
-                return "Jack";
-            case Deck.Rank.KING:
-                return "King";
-            case Deck.Rank.NINE:
-                return "Nine";
-            case Deck.Rank.QUEEN:
-                return "Queen";
-            case Deck.Rank.SEVEN:
-                return "Seven";
-            case Deck.Rank.SIX:
-                return "Six";
-            case Deck.Rank.TEN:
-                return "Ten";
-            case Deck.Rank.THREE:
-                return "Three";
-            case Deck.Rank.TWO:
-                return "Two";
-            default:
-                return "";
-        }
-    }
-
+*/
+#endregion
 }
