@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private Hand _playerTwoHand;
     private GameObject _mainCanvas;
     private GameObject _cardPrefab;
+    private StarterPile _starterPile;
 
     void Awake()
     {
@@ -47,11 +48,27 @@ public class GameManager : MonoBehaviour
 
         _cardPrefab = Resources.Load<GameObject>("prefabs/Card");
         Debug.Assert(_cardPrefab != null);
+
+        _starterPile = _mainCanvas.GetComponentInChildren<StarterPile>();
+        Debug.Assert(_starterPile != null);
     }
     void Start()
     {
         DealPlayer(_playerOneHand);
         DealPlayer(_playerTwoHand);
+        DealStarterCard();
+    }
+
+    private void DealStarterCard()
+    {
+        Card card = _deck.DealCard();
+        do
+        {
+            _deck.ReturnCardBackToDeck(card);
+            card = _deck.DealCard();
+        } while (card.Rank == global::Deck.Rank.EIGHT);
+
+        _starterPile.AddCard(card);
     }
 
     private void DealPlayer(Hand playerHand)
@@ -69,23 +86,4 @@ public class GameManager : MonoBehaviour
             go.transform.localScale = Vector3.one;
         }
     }
-
-
-    /*
-    private Deck _deck;
-
-
-    
-    
-    void OnCardClickedHandler(Card card)
-    {
-        //Debug.Log(string.Format("{0} was clicked.", card));
-        card.Flip();
-    }
-
-    public void ShuffleDeck()
-    {
-        _deck.Shuffle();
-    }
-    */
 }

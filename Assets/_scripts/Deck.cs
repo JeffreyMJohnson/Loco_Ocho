@@ -96,6 +96,12 @@ public class Deck
         return topCard;
     }
 
+    public void ReturnCardBackToDeck(Card card)
+    {
+        int index = _cards.Count/2;
+        _cards.Insert(index, card);
+    }
+
     #region constructor helper functions
     private void CreateDeck(Sprite[] fronts)
     {
