@@ -32,11 +32,15 @@ public class Card : MonoBehaviour
     }
     #endregion
 
+    #region public properties
     public Card_Rank Rank { get; private set; }
     public Card_Suit Suit { get; private set; }
     public Sprite Front { get; private set; }
     public bool IsInitialized { get; private set; }
 
+    public bool IsWild{get { return Rank == Card_Rank.EIGHT; }}
+    #endregion
+    #region public methods
     public void Init(Card_Rank rank, Card_Suit suit, Sprite front)
     {
         Rank = rank;
@@ -49,6 +53,11 @@ public class Card : MonoBehaviour
         IsInitialized = true;
     }
 
+    public override string ToString()
+    {
+        return Enum.GetName(typeof(Card_Rank), Rank) + " of " + Enum.GetName(typeof(Card_Suit), Suit);
+    }
+    #endregion
     void Awake()
     {
         IsInitialized = false;
