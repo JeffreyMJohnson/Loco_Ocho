@@ -14,11 +14,11 @@ public class GameManager : MonoBehaviour
     public Text message;
 
     private List<Card> _stock = new List<Card>();
-    private List<Card> _pile = new List<Card>();
+    private DiscardPile _discardPile;
     private Player _player1 = new Player();
     private Player _player2 = new Player();
     private Player _currentPlayer;
-    
+
 
     private void Deal()
     {
@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
             deck.AddCardToMiddle(potential);
             potential = deck.DealCard();
         }
-         _pile = new List<Card>() {potential};
-        _pile[0].transform.SetParent(pileTransform, false);
+
+        _discardPile.AddCard(potential);
 
         _stock = new List<Card>(deck.ToArray());
     }
@@ -55,11 +55,26 @@ public class GameManager : MonoBehaviour
     #region unity lifecycle methods
     void Awake()
     {
-        if (message == null)
+        //if (message == null)
+        //{
+        //    Debug.LogError("message is null. Did you remember to set in the editor?");
+        //    return;
+        //}
+
+        //get main canvas
+        GameObject mainCanvas =
+            FindObjectsOfType<GameObject>().Where(gameObject => gameObject.name == "Main Canvas").First();
+        if (mainCanvas == null)
         {
-            Debug.LogError("message is null. Did you remember to set in the editor?");
-            return;
+            Debug.LogError("Did not find main canvas.");
         }
+
+        //init discard pile
+        GameObject discardPilePrefab = Resources.Load<GameObject>("prefabs/Discard Pile");
+        GameObject discardPileInstance = Instantiate<GameObject>(discardPilePrefab);
+        discardPileInstance.transform.SetParent(mainCanvas.transform, false);
+        _discardPile = discardPileInstance.GetComponent<DiscardPile>();
+
         Deal();
         _currentPlayer = _player1;
     }
@@ -75,7 +90,7 @@ public class GameManager : MonoBehaviour
         else
         {
             //current player take turn
-            message.text = "Your turn " + GetPlayerAsString(_currentPlayer);
+            //message.text = "Your turn " + GetPlayerAsString(_currentPlayer);
         }
     }
     #endregion
