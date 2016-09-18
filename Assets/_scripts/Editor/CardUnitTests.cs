@@ -3,56 +3,56 @@ using UnityEngine;
 using UnityEditor;
 using NUnit.Framework;
 
-public class UnitTests
+public class CardUnitTests
 {
-    
+    private GameObject _cardPrefab = null;
+    private Sprite[] _sprites = null;
 
-    [Test]
-    public void CreateDeckTests()
+    [TestFixtureSetUp]
+    public void Init()
     {
-        var gameManager = new GameManager();
-        
+        _cardPrefab = Resources.Load<GameObject>(@"prefabs/Card");
+        _sprites = Resources.LoadAll<Sprite>("cards_classic");
     }
 
     [Test]
     public void CardInitTest()
     {
-        GameObject cardPrefab = Resources.Load<GameObject>(@"prefabs/Card");
-        GameObject cardInstance = GameObject.Instantiate(cardPrefab) as GameObject;
-        Assert.NotNull(cardInstance);
-
-        Card cardScript = cardInstance.GetComponent<Card>();
-        Assert.NotNull(cardScript);
-
+        GameObject cardInstance = GameObject.Instantiate(_cardPrefab) as GameObject;
+        Card card = cardInstance.GetComponent<Card>();
         Card.Card_Rank ace = Card.Card_Rank.ACE;
         Card.Card_Suit spades = Card.Card_Suit.SPADES;
         Sprite sprite = GetSprite(ace, spades);
         
-        Assert.IsFalse(cardScript.IsInitialized);
-        cardScript.Init(ace, spades, sprite);
-        Assert.IsTrue(cardScript.IsInitialized);
+        Assert.IsFalse(card.IsInitialized);
+        card.Init(ace, spades, sprite);
+        Assert.IsTrue(card.IsInitialized);
 
-        Assert.AreEqual(ace, cardScript.Rank);
-        Assert.AreEqual(spades, cardScript.Suit);
-        Assert.NotNull(cardScript.Front);
+        Assert.AreEqual(ace, card.Rank);
+        Assert.AreEqual(spades, card.Suit);
+        Assert.NotNull(card.Front);
+        Assert.AreSame(sprite, card.Front);
+    }
+
+    [Test]
+    public void CardInitNullSpriteTest()
+    {
+        GameObject cardInstance = GameObject.Instantiate(_cardPrefab) as GameObject;
+        Card threeDiamonds = cardInstance.GetComponent<Card>();
+        threeDiamonds.Init(Card.Card_Rank.THREE, Card.Card_Suit.DIAMONDS, null);
+        Assert.That(threeDiamonds.Rank, Is.EqualTo(Card.Card_Rank.THREE));
+        Assert.That(threeDiamonds.Suit, Is.EqualTo(Card.Card_Suit.DIAMONDS));
+        Assert.That(threeDiamonds.Front, Is.Null);
     }
 
     [Test]
     public void CardIsWildTest()
     {
-        GameObject cardPrefab = Resources.Load<GameObject>(@"prefabs/Card");
-
-        GameObject cardInstance_wild = GameObject.Instantiate(cardPrefab) as GameObject;
-        Assert.NotNull(cardInstance_wild);
-
-        GameObject cardInstance_Non = GameObject.Instantiate(cardPrefab) as GameObject;
-        Assert.NotNull(cardInstance_Non);
+        GameObject cardInstance_wild = GameObject.Instantiate(_cardPrefab) as GameObject;
+        GameObject cardInstance_Non = GameObject.Instantiate(_cardPrefab) as GameObject;
 
         Card cardScript_Wild = cardInstance_wild.GetComponent<Card>();
-        Assert.NotNull(cardScript_Wild);
-
         Card cardScript_Non = cardInstance_Non.GetComponent<Card>();
-        Assert.NotNull(cardScript_Non);
 
         Card.Card_Rank ace = Card.Card_Rank.ACE;
         Card.Card_Suit spades = Card.Card_Suit.SPADES;
@@ -71,14 +71,12 @@ public class UnitTests
 
     private Sprite GetSprite(Card.Card_Rank rank, Card.Card_Suit suit)
     {
-        Sprite[] sprites =
-        Resources.LoadAll<Sprite>("cards_classic");
         
         string rankString = Enum.GetName(typeof(Card.Card_Rank), rank).ToLower();
         string suitString = Enum.GetName(typeof(Card.Card_Suit), suit).ToLower();
         string file = string.Format("{0}_{1}",
             rankString, suitString);
-        foreach (Sprite front in sprites)
+        foreach (Sprite front in _sprites)
         {
             if (front.name == file)
             {

@@ -46,7 +46,13 @@ public class Card : MonoBehaviour
         Rank = rank;
         Suit = suit;
         Front = front;
-        GetComponent<Image>().sprite = front;
+        Image image = GetComponent<Image>();
+        if (image == null)
+        {
+            image = gameObject.AddComponent<Image>();
+        }
+        image.sprite = front;
+
         //set name
         name = Enum.GetName(typeof(Card_Rank), rank) + " of " + Enum.GetName(typeof(Card_Suit), suit);
 
