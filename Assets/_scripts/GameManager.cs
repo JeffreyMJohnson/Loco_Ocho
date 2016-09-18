@@ -7,13 +7,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    public GameObject cardPrefab = null;
-    public RectTransform stockTransform = null;
-    public RectTransform pileTransform = null;
     public RectTransform player1HandTransform = null;
+    public RectTransform player2HandTransform = null;
     public Text message;
 
-    private List<Card> _stock = new List<Card>();
+    private DrawPile _drawPile;
     private DiscardPile _discardPile;
     private Player _player1 = new Player();
     private Player _player2 = new Player();
@@ -23,6 +21,7 @@ public class GameManager : MonoBehaviour
     private void Deal()
     {
         Deck deck = new Deck();
+        deck.Shuffle(50);
         //Deal 5 cards one at a time, face down, beginning with the player to the left.
         for (int i = 0; i < 5; ++i)
         {
@@ -30,7 +29,11 @@ public class GameManager : MonoBehaviour
             _player1.Hand.Add(topCard);
             topCard.transform.SetParent(player1HandTransform, false);
 
-            _player2.Hand.Add(deck.DealCard());
+
+            topCard = deck.DealCard();
+            _player2.Hand.Add(topCard);
+            topCard.transform.SetParent(player2HandTransform, false);
+
         }
 
         /*The balance of the pack is placed face down in the center of the table and forms 
@@ -47,8 +50,8 @@ public class GameManager : MonoBehaviour
         }
 
         _discardPile.AddCard(potential);
-
-        _stock = new List<Card>(deck.ToArray());
+        
+        _drawPile.CreateNewPile(deck.ToArray());
     }
 
 
@@ -72,8 +75,16 @@ public class GameManager : MonoBehaviour
         //init discard pile
         GameObject discardPilePrefab = Resources.Load<GameObject>("prefabs/Discard Pile");
         GameObject discardPileInstance = Instantiate<GameObject>(discardPilePrefab);
+        discardPileInstance.name = "Discard Pile";
         discardPileInstance.transform.SetParent(mainCanvas.transform, false);
         _discardPile = discardPileInstance.GetComponent<DiscardPile>();
+
+        //init draw pile
+        GameObject drawPilePrefab = Resources.Load<GameObject>("prefabs/Draw Pile");
+        GameObject drawPileInstance = Instantiate<GameObject>(drawPilePrefab);
+        drawPileInstance.name = "Draw Pile";
+        drawPileInstance.transform.SetParent(mainCanvas.transform, false);
+        _drawPile = drawPileInstance.GetComponent<DrawPile>();
 
         Deal();
         _currentPlayer = _player1;
