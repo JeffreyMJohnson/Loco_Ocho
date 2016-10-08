@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class DrawOnEmptyPileException : Exception
 {
@@ -19,9 +21,9 @@ public class DrawOnEmptyPileException : Exception
     }
 }
 
-public class DrawPile : MonoBehaviour
+public class DrawPile : MonoBehaviour, IPointerClickHandler
 {
-
+    public UnityEvent DrawPileClicked = new UnityEvent();
     public bool IsEmpty
     {
         get
@@ -55,6 +57,11 @@ public class DrawPile : MonoBehaviour
     public void CreateNewPile(Card[] cards)
     {
         _cards = new Queue<Card>(cards);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        DrawPileClicked.Invoke();
     }
 
     private Queue<Card> _cards;

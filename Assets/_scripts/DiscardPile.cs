@@ -5,6 +5,7 @@ using System.Collections.Generic;
 //todo this does not need to be monobehaviour 
 public class DiscardPile : MonoBehaviour
 {
+    public Card TopCard { get { return _cards.Peek(); } }
     public Card.Card_Rank CurrentRank { get; private set; }
     public Card.Card_Suit CurrentSuit { get; private set; }
     public bool CurrentIsWild { get; private set; }

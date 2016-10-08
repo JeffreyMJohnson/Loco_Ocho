@@ -2,8 +2,10 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
-public class Card : MonoBehaviour
+public class Card : MonoBehaviour, IPointerClickHandler
 {
     #region enums
     public enum Card_Suit
@@ -32,11 +34,15 @@ public class Card : MonoBehaviour
     }
     #endregion
 
+    public class CardClickedEvent : UnityEvent<Card>{}
+
     #region public properties
     public Card_Rank Rank { get; private set; }
     public Card_Suit Suit { get; private set; }
     public Sprite Front { get; private set; }
     public bool IsInitialized { get; private set; }
+
+    public CardClickedEvent CardClicked = new CardClickedEvent();
 
     public bool IsWild{get { return Rank == Card_Rank.EIGHT; }}
     #endregion
@@ -69,5 +75,8 @@ public class Card : MonoBehaviour
         IsInitialized = false;
     }
 
-
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        CardClicked.Invoke(this);
+    }
 }
