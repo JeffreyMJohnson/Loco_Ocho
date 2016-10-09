@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 //todo this does not need to be monobehaviour 
@@ -17,7 +18,19 @@ public class DiscardPile : MonoBehaviour
         {
             _cards = new Stack<Card>();
         }
+
         card.transform.SetParent(transform, false);
+
+        RectTransform cardRecTransform = card.GetComponent<RectTransform>();
+        RectTransform pileRectTransform = gameObject.GetComponent<RectTransform>();
+
+        //non stretching
+        cardRecTransform.sizeDelta = pileRectTransform.sizeDelta;
+        cardRecTransform.anchoredPosition = Vector2.zero;
+        cardRecTransform.anchorMin = pileRectTransform.anchorMin;
+        cardRecTransform.anchorMax = pileRectTransform.anchorMax;
+        cardRecTransform.pivot = pileRectTransform.pivot;
+
         _cards.Push(card);
         CurrentRank = card.Rank;
         if (card.IsWild)
@@ -39,6 +52,6 @@ public class DiscardPile : MonoBehaviour
     }
 
     private Stack<Card> _cards;
-    
+    //private Image _cardImage;
 
 }

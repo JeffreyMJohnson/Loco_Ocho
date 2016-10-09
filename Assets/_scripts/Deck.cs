@@ -73,7 +73,7 @@ public class Deck
             foreach (Card.Card_Rank rank in Enum.GetValues(typeof(Card.Card_Rank)))
             {
                 Card newCard = GameObject.Instantiate<GameObject>(_cardPrefab).GetComponent<Card>();
-                newCard.transform.position = Vector3.zero;
+                //newCard.transform.position = Vector3.zero;
                 newCard.Init(rank, suit, GetCardFront(fronts, rank, suit));
                 _cards.Enqueue(newCard);
             }

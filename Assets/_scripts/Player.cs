@@ -16,6 +16,7 @@ public class Player
         _handParent = _id == PlayerID.ONE ? _gameManager.player1HandTransform : _gameManager.player2HandTransform;
     }
 
+    //todo want this decoupled - move rules logic to player then...
     private GameManager _gameManager;
     private PlayerID _id;
     private RectTransform _handParent;
@@ -27,11 +28,13 @@ public class Player
             return;
         }
 
+        //if human ignore?
+
         //check if have a valid play
-        List<Card> validPlays = GetValidPlayCards();
+       // List<Card> validPlays = GetValidPlayCards();
 
         //draw card
-        AddCardToHand(_gameManager.DrawCard());
+       // AddCardToHand(_gameManager.DrawCard());
     }
 
     private List<Card> GetValidPlayCards()
@@ -73,12 +76,13 @@ public class Player
                     //play card
                     Card play = _hand.Find(x => x == clickedCard);
                     _hand.Remove(play);
-                    play.transform.SetParent(null);
+                    //play.transform.SetParent(null);
                     _gameManager.PlayCard(play);
                 }
                 else
                 {
                     Debug.Log("Not a valid play...");
+                    MessagePanel.Instance.ShowMessageText("Not a valid play ...");
                 }
             }
 

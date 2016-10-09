@@ -29,6 +29,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1013f6ff0f6bd544e8700fd7f4f079a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DrawPileClicked:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &11485814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,7 +81,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 78, y: -0.00000095367}
+  m_AnchoredPosition: {x: 78, y: -9.5}
   m_SizeDelta: {x: 108, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
@@ -85,7 +90,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_AnchoredPosition.y
+      value: -9.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166350}

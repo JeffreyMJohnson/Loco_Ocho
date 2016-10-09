@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
 
     #region public fields/properties/events
+    //todo refactor into the player class
     public RectTransform player1HandTransform = null;
     public RectTransform player2HandTransform = null;
     public Text message;
@@ -118,12 +119,6 @@ public class GameManager : MonoBehaviour
     #region unity lifecycle methods
     void Awake()
     {
-        //if (message == null)
-        //{
-        //    Debug.LogError("message is null. Did you remember to set in the editor?");
-        //    return;
-        //}
-
         //init players
         if (_player1 == null)
         {
@@ -157,6 +152,13 @@ public class GameManager : MonoBehaviour
         _drawPile = drawPileInstance.GetComponent<DrawPile>();
         _drawPile.DrawPileClicked.AddListener(DrawPileClickEventHandler);
 
+        //init message panel last to ensure overlays properly
+        GameObject messagePanel = Resources.Load<GameObject>("prefabs/Message Panel");
+        GameObject messagePanelInstance = Instantiate<GameObject>(messagePanel);
+        messagePanelInstance.name = "Message Panel";
+        messagePanelInstance.transform.SetParent(mainCanvas.transform, false);
+        
+        //deal the cards and start the game
         Deal();
         _currentPlayer = _player1;
 
@@ -180,6 +182,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    //todo remove this for release
     public void HandleDebugButtonClickEvent()
     {
         //swap current player
@@ -189,11 +192,17 @@ public class GameManager : MonoBehaviour
 
     private void DrawPileClickEventHandler()
     {
+        //player 2 npc so don't read click if turn
+        if(_currentPlayer == _player2)
+        {
+            return;
+        }
         //is empty?
         if (!_drawPile.IsEmpty)
         {
             _currentPlayer.AddCardToHand(_drawPile.DrawCard());
 
+            //todo move this to draw pile object
             if(_drawPile.IsEmpty)
             {
                 _drawPile.gameObject.SetActive(false);
