@@ -119,16 +119,6 @@ public class GameManager : MonoBehaviour
     #region unity lifecycle methods
     void Awake()
     {
-        //init players
-        if (_player1 == null)
-        {
-            _player1 = new Player(this, Player.PlayerID.ONE);
-        }
-        if (_player2 == null)
-        {
-            _player2 = new Player(this, Player.PlayerID.TWO);
-        }
-
         //get main canvas
         GameObject mainCanvas =
             FindObjectsOfType<GameObject>().Where(gameObject => gameObject.name == "Main Canvas").First();
@@ -157,7 +147,17 @@ public class GameManager : MonoBehaviour
         GameObject messagePanelInstance = Instantiate<GameObject>(messagePanel);
         messagePanelInstance.name = "Message Panel";
         messagePanelInstance.transform.SetParent(mainCanvas.transform, false);
-        
+
+        //init players note player requires messag panel to be instantiated first so init after
+        if (_player1 == null)
+        {
+            _player1 = new Player(this, Player.PlayerID.ONE);
+        }
+        if (_player2 == null)
+        {
+            _player2 = new Player(this, Player.PlayerID.TWO);
+        }
+
         //deal the cards and start the game
         Deal();
         _currentPlayer = _player1;

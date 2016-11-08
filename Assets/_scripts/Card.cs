@@ -39,7 +39,17 @@ public class Card : MonoBehaviour, IPointerClickHandler
     #region public properties
     public Card_Rank Rank { get; private set; }
     public Card_Suit Suit { get; private set; }
-    public Sprite Front { get; private set; }
+    public Sprite Front
+    {
+        get
+        {
+            return _image.sprite;
+        }
+        set
+        {
+            _image.sprite = value;
+        }
+    }
     public bool IsInitialized { get; private set; }
 
     public CardClickedEvent CardClicked = new CardClickedEvent();
@@ -52,13 +62,6 @@ public class Card : MonoBehaviour, IPointerClickHandler
         Rank = rank;
         Suit = suit;
         Front = front;
-        Image image = GetComponent<Image>();
-        if (image == null)
-        {
-            image = gameObject.AddComponent<Image>();
-        }
-        image.sprite = front;
-
         //set name
         name = Enum.GetName(typeof(Card_Rank), rank) + " of " + Enum.GetName(typeof(Card_Suit), suit);
 
@@ -73,10 +76,17 @@ public class Card : MonoBehaviour, IPointerClickHandler
     void Awake()
     {
         IsInitialized = false;
+        _image = GetComponent<Image>();
+        if (_image == null)
+        {
+            _image = gameObject.AddComponent<Image>();
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         CardClicked.Invoke(this);
     }
+
+    private Image _image;
 }

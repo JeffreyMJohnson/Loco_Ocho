@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Player
 {
@@ -14,6 +15,7 @@ public class Player
         _gameManager.PlayerTurnChanged.AddListener(PlayerTurnChangedEventHandler);
         //set parent to appropriate one
         _handParent = _id == PlayerID.ONE ? _gameManager.player1HandTransform : _gameManager.player2HandTransform;
+        MessagePanel.Instance.SuitSelectedEvent.AddListener(WildCardSuitSelectionEventHandler);
     }
 
     //todo want this decoupled - move rules logic to player then...
@@ -21,8 +23,12 @@ public class Player
     private PlayerID _id;
     private RectTransform _handParent;
     private List<Card> _hand = new List<Card>();
+    private bool _waitingForSuitSelection = false;
+    private Card _clickedCard = null;
     private void PlayerTurnChangedEventHandler(Player currentPlayer)
     {
+
+        //todo implementing ai player
         if (currentPlayer != this)
         {
             return;
@@ -31,10 +37,10 @@ public class Player
         //if human ignore?
 
         //check if have a valid play
-       // List<Card> validPlays = GetValidPlayCards();
+        // List<Card> validPlays = GetValidPlayCards();
 
         //draw card
-       // AddCardToHand(_gameManager.DrawCard());
+        // AddCardToHand(_gameManager.DrawCard());
     }
 
     private List<Card> GetValidPlayCards()
@@ -59,6 +65,11 @@ public class Player
 
     private void CardClickEventHandler(Card clickedCard)
     {
+        //ignore click if waiting for suit selection
+        if(_waitingForSuitSelection)
+        {
+            return;
+        }
         //Debug.Log("My card " + clickedCard.ToString() + " was clicked..");
         //is it this players turn
         if (_gameManager.CurrentPlayer == this)
@@ -71,13 +82,24 @@ public class Player
                 {
 
                     //todo check for wild and then get suit
+                    if (clickedCard.IsWild)
+                    {
+                        _clickedCard = clickedCard;
+                        Debug.Log("Get wild card suit...");
+                        MessagePanel.Instance.ShowSuitSelection();
+                        //will get response via event handler
+                        _waitingForSuitSelection = true;
+                    }
+                    else
+                    {
+                        //play card
+                        Card play = _hand.Find(x => x == clickedCard);
+                        _hand.Remove(play);
+                        //play.transform.SetParent(null);
+                        _gameManager.PlayCard(play);
+                    }
 
 
-                    //play card
-                    Card play = _hand.Find(x => x == clickedCard);
-                    _hand.Remove(play);
-                    //play.transform.SetParent(null);
-                    _gameManager.PlayCard(play);
                 }
                 else
                 {
@@ -87,5 +109,20 @@ public class Player
             }
 
         }
+    }
+    private void WildCardSuitSelectionEventHandler(Card.Card_Suit wildSuit, Sprite suitImage)
+    {
+        //this event is called for each player but only want the current one to act
+        //can't use the _gameManager.Current value because PlayCard resets it inside before the 
+        //second call.
+        if(_clickedCard == null)
+        {
+            return;
+        }
+        
+        _clickedCard.Front = suitImage;
+        _gameManager.PlayCard(_clickedCard, wildSuit);
+        _clickedCard = null;
+        _waitingForSuitSelection = false;
     }
 }
