@@ -34,12 +34,12 @@ Nice to have
 #### Interesting Code
 
 ## Current Status
-![Cards Dealt (debug mode)](https://github.com/JeffreyMJohnson/Loco_Ocho/tree/dev/readme_resources/opening_deal.png "Cards Dealt (debug mode)")
+![Cards Dealt (debug mode)](readme_resources/opening_deal.png "Cards Dealt (debug mode)")
 * Have the deck of cards built, shuffled and dealt to 2 players. 
 
-![Playing a Wild Card](https://github.com/JeffreyMJohnson/Loco_Ocho/tree/dev/readme_resources/playing_wild.png "Playing a Wild Card")
+![Playing a Wild Card](readme_resources/playing_wild.png "Playing a Wild Card")
 
-![New suit selected.](https://github.com/JeffreyMJohnson/Loco_Ocho/tree/dev/readme_resources/suit_selected.png "New suit selected.")
+![New suit selected.](readme_resources/suit_selected.png "New suit selected.")
 * Most of the logic for taking a turn is implemented.
 
 ## To-Do
