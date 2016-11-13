@@ -40,12 +40,14 @@ Nice to have
 ![Playing a Wild Card](https://github.com/JeffreyMJohnson/Loco_Ocho/raw/dev/readme_resources/playing_wild.png "Playing a Wild Card")
 
 ![New suit selected.](https://github.com/JeffreyMJohnson/Loco_Ocho/raw/dev/readme_resources/suit_selected.png "New suit selected.")
-* Most of the logic for taking a turn is implemented.
+* Turn logic is complete. 
 
 ## To-Do
 Would like to document this process better as it's being developed. Maybe article or tutorial?
-* Complete human player turn logic
 * Implement Computer player turn logic
+* game-play UI
+  * Current Player
+  * status window / panel
 * Implement win state
 * splash screen
 * Menu scene
