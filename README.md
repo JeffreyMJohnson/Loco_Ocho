@@ -32,6 +32,9 @@ Nice to have
 * Visual Studio 15 (preview build)
 
 #### Interesting Code
+* [GameManager Class](https://github.com/JeffreyMJohnson/Loco_Ocho/blob/dev/Assets/_scripts/GameManager.cs)
+* [Card Class](https://github.com/JeffreyMJohnson/Loco_Ocho/blob/dev/Assets/_scripts/Card.cs)
+* [Player Class](https://github.com/JeffreyMJohnson/Loco_Ocho/blob/dev/Assets/_scripts/Player.cs)
 
 ## Current Status
 ![Cards Dealt (debug mode)](https://github.com/JeffreyMJohnson/Loco_Ocho/raw/dev/readme_resources/opening_deal.png "Cards Dealt (debug mode)")
