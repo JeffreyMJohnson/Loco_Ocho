@@ -63,20 +63,6 @@ public class Player
         newCard.CardClicked.AddListener(CardClickEventHandler);
     }
 
-    //todo remove this - debug only
-    void Update()
-    {
-        Debug.Log("update");
-        if (_gameManager.CurrentPlayer == this && Input.GetKeyUp(KeyCode.Alpha1))
-        {
-            //click the first card in the hand
-            if (_hand.Count > 0)
-            {
-                CardClickEventHandler(_hand[0]);
-            }
-        }
-    }
-
     private void CardClickEventHandler(Card clickedCard)
     {
         //ignore click if waiting for suit selection
@@ -105,6 +91,7 @@ public class Player
                     //play card
                     Card play = _hand.Find(x => x == clickedCard);
                     _hand.Remove(play);
+                    play.CardClicked.RemoveListener(CardClickEventHandler);
                     //play.transform.SetParent(null);
                     _gameManager.PlayCard(play);
                 }

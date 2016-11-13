@@ -192,11 +192,6 @@ public class GameManager : MonoBehaviour
 
     private void DrawPileClickEventHandler()
     {
-        //player 2 npc so don't read click if turn
-        if(_currentPlayer == _player2)
-        {
-            return;
-        }
         //is empty?
         if (!_drawPile.IsEmpty)
         {
