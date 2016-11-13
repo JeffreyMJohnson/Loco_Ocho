@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //is there winner?
-        if (_player1.IsHandEmpty && _player2.IsHandEmpty)
+        if (_player1.IsHandEmpty || _player2.IsHandEmpty)
         {
             message.text = (_player1.IsHandEmpty ? "Player 1" : "Player 2") + "Won !!";
             Debug.LogError("winning state not implemented yet!");

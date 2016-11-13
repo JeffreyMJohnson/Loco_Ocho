@@ -63,10 +63,24 @@ public class Player
         newCard.CardClicked.AddListener(CardClickEventHandler);
     }
 
+    //todo remove this - debug only
+    void Update()
+    {
+        Debug.Log("update");
+        if (_gameManager.CurrentPlayer == this && Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            //click the first card in the hand
+            if (_hand.Count > 0)
+            {
+                CardClickEventHandler(_hand[0]);
+            }
+        }
+    }
+
     private void CardClickEventHandler(Card clickedCard)
     {
         //ignore click if waiting for suit selection
-        if(_waitingForSuitSelection)
+        if (_waitingForSuitSelection)
         {
             return;
         }
@@ -74,38 +88,33 @@ public class Player
         //is it this players turn
         if (_gameManager.CurrentPlayer == this)
         {
-            //this players card?
-            if (_hand.Contains(clickedCard))
+            //valid play?
+            if (_gameManager.IsValidPlay(clickedCard))
             {
-                //valid play?
-                if (_gameManager.IsValidPlay(clickedCard))
+
+
+                if (clickedCard.IsWild)
                 {
-
-                    //todo check for wild and then get suit
-                    if (clickedCard.IsWild)
-                    {
-                        _clickedCard = clickedCard;
-                        Debug.Log("Get wild card suit...");
-                        MessagePanel.Instance.ShowSuitSelection();
-                        //will get response via event handler
-                        _waitingForSuitSelection = true;
-                    }
-                    else
-                    {
-                        //play card
-                        Card play = _hand.Find(x => x == clickedCard);
-                        _hand.Remove(play);
-                        //play.transform.SetParent(null);
-                        _gameManager.PlayCard(play);
-                    }
-
-
+                    _clickedCard = clickedCard;
+                    MessagePanel.Instance.ShowSuitSelection();
+                    //will get response via event handler
+                    _waitingForSuitSelection = true;
                 }
                 else
                 {
-                    Debug.Log("Not a valid play...");
-                    MessagePanel.Instance.ShowMessageText("Not a valid play ...");
+                    //play card
+                    Card play = _hand.Find(x => x == clickedCard);
+                    _hand.Remove(play);
+                    //play.transform.SetParent(null);
+                    _gameManager.PlayCard(play);
                 }
+
+
+            }
+            else
+            {
+                Debug.Log("Not a valid play...");
+                MessagePanel.Instance.ShowMessageText("Not a valid play ...");
             }
 
         }
@@ -115,14 +124,15 @@ public class Player
         //this event is called for each player but only want the current one to act
         //can't use the _gameManager.Current value because PlayCard resets it inside before the 
         //second call.
-        if(_clickedCard == null)
+        if (_clickedCard == null)
         {
             return;
         }
-        
+
         _clickedCard.Front = suitImage;
         _gameManager.PlayCard(_clickedCard, wildSuit);
         _clickedCard = null;
         _waitingForSuitSelection = false;
+
     }
 }
